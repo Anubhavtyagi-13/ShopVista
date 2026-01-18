@@ -20,32 +20,10 @@ const ProductListing = () => {
     })
   }, [searchQuery, selectedCategory])
 
-  // Debug: Log all products
-  console.log('All products:', productsData)
-  console.log('Total products:', productsData.length)
-  console.log('Coffee Machine:', productsData.find(p => p.name.includes('Coffee')))
-  console.log('Yoga Mat:', productsData.find(p => p.name.includes('Yoga')))
-  console.log('Filtered products:', filteredProducts.length)
-
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">
-          Our Products ({filteredProducts.length} of {productsData.length})
-        </h1>
-        
-        {/* Debug: Show all product names */}
-        <div className="mb-4 p-4 bg-yellow-100 rounded-lg text-sm">
-          <strong>Debug - All Products:</strong>
-          <ul className="list-disc list-inside mt-2">
-            {productsData.map(p => (
-              <li key={p.id}>
-                {p.id}. {p.name} ({p.category})
-                {(p.name.includes('Coffee') || p.name.includes('Yoga')) && ' ⭐'}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <h1 className="text-3xl font-bold text-gray-900 mb-8">Our Products</h1>
         
         {/* Search and Filter Section */}
         <div className="mb-8 space-y-4 md:flex md:items-center md:space-y-0 md:space-x-4">
